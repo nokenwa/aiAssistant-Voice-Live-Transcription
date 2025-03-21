@@ -55,6 +55,10 @@ const StartForm: React.FC = () => {
             <Label htmlFor="email">Email</Label>
             <Input id="email" name="email" type="email" />
           </FormControl>
+          <FormControl>
+            <Label htmlFor="number">Your Phone Number</Label>
+            <Input id="number" name="number" type="tel" />
+          </FormControl>
 
           <FormActions>
             <Button variant="secondary" onClick={handleClose}>
@@ -90,11 +94,15 @@ const StartForm: React.FC = () => {
                   const email = (
                     document.getElementById("email") as HTMLInputElement
                   ).value;
+                  const number = (
+                    document.getElementById("number") as HTMLInputElement
+                  ).value;
 
                   const queryParams = new URLSearchParams({
                     firstName,
                     lastName,
                     email,
+                    number,
                   }).toString();
 
                   try {

@@ -172,11 +172,13 @@ const StartButton: React.FC = () => {
   const email = searchParams.get("email");
   const firstName = searchParams.get("firstName");
   const lastName = searchParams.get("lastName");
+  const number = searchParams.get("number");
 
   const participant = {
     email: email,
     firstName: firstName,
     lastName: lastName,
+    number: number,
   };
 
   const handleClick = async () => {

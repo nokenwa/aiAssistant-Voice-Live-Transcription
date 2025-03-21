@@ -78,12 +78,7 @@ export async function POST(req: NextRequest, _res: NextResponse) {
   //Create a new call to the retail assistant
   try {
     const retailAssistantId = process.env.RETAIL_ASSISTANT_ID;
-    const to = process.env.TWILIO_SIP_PHONE as string;
     const from = process.env.TWILIO_PHONE_NUMBER as string;
-
-    if (!to) {
-      throw new Error("TWILIO_SIP_PHONE environment variable is not set");
-    }
 
     const baseUrl =
       process.env.NODE_ENV === "production"
@@ -95,7 +90,7 @@ export async function POST(req: NextRequest, _res: NextResponse) {
     url += `&assistant=${retailAssistantId}`;
 
     await client.calls.create({
-      to,
+      to: participant.number,
       from,
       url,
     });
