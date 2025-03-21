@@ -1,0 +1,26 @@
+label {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+label div {
+  margin-left: 15px;
+}
+
+label small {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+label span {
+  font-size: 18px;
+}
+
+input[type="checkbox"] {
+  accent-color: #7e6ee1;
+  height: 50px;
+  width: 31px;
+}
