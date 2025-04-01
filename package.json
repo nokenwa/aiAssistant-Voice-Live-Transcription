@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon ./src/server/server.ts ",
     "build": "next build && tsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node ./dist/server.js",
+    "start": "cross-env NODE_ENV=production node ./dist/server.ts",
     "lint": "next lint",
     "tsc": "tsc --noEmit",
     "prepare": "next-ws patch"

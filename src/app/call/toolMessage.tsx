@@ -80,6 +80,8 @@ const ToolMessage: React.FC<ToolMessageProps> = ({ tool }) => {
     case "AI Personalization Engine":
       return <></>;
       break;
+    
+    //Custom Tool Components Go Here
     case "Shoes_Inventory":
       try {
         content = JSON.parse(output);
@@ -355,81 +357,81 @@ const ToolMessage: React.FC<ToolMessageProps> = ({ tool }) => {
       );
       break;
     case "Booking_Appointment":
-      try {
-        content = JSON.parse(output);
-      } catch {
-        return <></>;
-      }
-      toolDisplay = (
-        <ChatMessage variant="inbound">
-          <ChatBubble>
-            <AIChatMessage variant="user">
-              <AIChatMessageAuthor
-                avatarIcon={ProductSegmentIcon}
-                avatarName="Jeff"
-                aria-label="AI said"
-              >
-                Booked Appointment
-              </AIChatMessageAuthor>
-              <AIChatMessageBody>
-                <Flex wrap>
-                  <MediaObject verticalAlign="center">
-                    <MediaFigure spacing="space40">
-                      <CalendarIcon
-                        decorative={false}
-                        title="Description of icon"
-                      />
-                    </MediaFigure>
-                    <MediaBody>
-                      <Text
-                        as="h3"
-                        fontSize="fontSize60"
-                        lineHeight="lineHeight60"
-                      >
-                        <Text
-                          href="/"
-                          as="a"
-                          color="inherit"
-                          fontSize="inherit"
-                          lineHeight="inherit"
-                          textDecoration="none"
-                        >
-                          {content.title}
-                        </Text>
-                      </Text>
-                      <Text
-                        as="h3"
-                        fontSize="fontSize20"
-                        lineHeight="lineHeight20"
-                        color="colorTextWeak"
-                      >
-                        Location: {content.location}
-                      </Text>
-                      <Text
-                        as="h3"
-                        fontSize="fontSize20"
-                        lineHeight="lineHeight20"
-                        color="colorTextWeak"
-                      >
-                        Date: {content.date.substring(0, 10)}
-                      </Text>
-                      <Text
-                        as="h3"
-                        fontSize="fontSize20"
-                        lineHeight="lineHeight20"
-                        color="colorTextWeak"
-                      >
-                        Time: {content.time}
-                      </Text>
-                    </MediaBody>
-                  </MediaObject>
-                </Flex>
-              </AIChatMessageBody>
-            </AIChatMessage>
-          </ChatBubble>
-        </ChatMessage>
-      );
-      break;
+    //   try {
+    //     content = JSON.parse(output);
+    //   } catch {
+    //     return <></>;
+    //   }
+    //   toolDisplay = (
+    //     <ChatMessage variant="inbound">
+    //       <ChatBubble>
+    //         <AIChatMessage variant="user">
+    //           <AIChatMessageAuthor
+    //             avatarIcon={ProductSegmentIcon}
+    //             avatarName="Jeff"
+    //             aria-label="AI said"
+    //           >
+    //             Booked Appointment
+    //           </AIChatMessageAuthor>
+    //           <AIChatMessageBody>
+    //             <Flex wrap>
+    //               <MediaObject verticalAlign="center">
+    //                 <MediaFigure spacing="space40">
+    //                   <CalendarIcon
+    //                     decorative={false}
+    //                     title="Description of icon"
+    //                   />
+    //                 </MediaFigure>
+    //                 <MediaBody>
+    //                   <Text
+    //                     as="h3"
+    //                     fontSize="fontSize60"
+    //                     lineHeight="lineHeight60"
+    //                   >
+    //                     <Text
+    //                       href="/"
+    //                       as="a"
+    //                       color="inherit"
+    //                       fontSize="inherit"
+    //                       lineHeight="inherit"
+    //                       textDecoration="none"
+    //                     >
+    //                       {content.title}
+    //                     </Text>
+    //                   </Text>
+    //                   <Text
+    //                     as="h3"
+    //                     fontSize="fontSize20"
+    //                     lineHeight="lineHeight20"
+    //                     color="colorTextWeak"
+    //                   >
+    //                     Location: {content.location}
+    //                   </Text>
+    //                   <Text
+    //                     as="h3"
+    //                     fontSize="fontSize20"
+    //                     lineHeight="lineHeight20"
+    //                     color="colorTextWeak"
+    //                   >
+    //                     Date: {content.date.substring(0, 10)}
+    //                   </Text>
+    //                   <Text
+    //                     as="h3"
+    //                     fontSize="fontSize20"
+    //                     lineHeight="lineHeight20"
+    //                     color="colorTextWeak"
+    //                   >
+    //                     Time: {content.time}
+    //                   </Text>
+    //                 </MediaBody>
+    //               </MediaObject>
+    //             </Flex>
+    //           </AIChatMessageBody>
+    //         </AIChatMessage>
+    //       </ChatBubble>
+    //     </ChatMessage>
+    //   );
+    //   break;
     default:
       let internal = <></>;
       try {
